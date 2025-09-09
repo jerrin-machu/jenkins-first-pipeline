@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout'){
+         steps {
+            git branch:'main', url:'https://github.com/jerrin-machu/jenkins-first-pipeline.git'
+         }
+        }
+
+        stage('Build'){
+            steps {
+                echo "Building the App"
+            }
+        }
+
+        stage('Test'){
+            steps {
+                sh 'python3 -m pytest test_app.py'
+            }
+        }
+
+        stage('Deploy'){
+
+            steps {
+                echo 'Deploy Step (placeholder)'
+            }
+
+        }
+    }
+}

@@ -3,8 +3,8 @@ pipeline {
 
   environment {
     VENV_DIR = '.venv'
-    PY_BIN = "${env.WORKSPACE}/${env.VENV_DIR}/bin/python" // builds the full path to the Python binary inside your venv
-    PIP_BIN = "${env.WORKSPACE}/${env.VENV_DIR}/bin/pip" // points to the pip        binary inside your venv
+    PY_BIN = "${env.WORKSPACE}/${env.VENV_DIR}/bin/python" # builds the full path to the Python binary inside your venv
+    PIP_BIN = "${env.WORKSPACE}/${env.VENV_DIR}/bin/pip" # points to the pip        binary inside your venv
   }
 
   stages {

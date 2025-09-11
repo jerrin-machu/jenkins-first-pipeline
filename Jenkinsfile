@@ -18,6 +18,7 @@ pipeline {
     stage('Setup virtualenv') {
       steps {
         sh '''
+          #!/bin/bash
           set -euo pipefail
 
           echo "Workspace: $PWD"
@@ -64,6 +65,7 @@ pipeline {
     stage('Test') {
       steps {
         sh '''
+          #!/bin/bash
           set -euo pipefail
           # Use the venv python binary directly to run pytest
           ${PY_BIN} -m pytest -q || { echo "pytest failed"; exit 1; }

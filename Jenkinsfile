@@ -19,7 +19,7 @@ pipeline {
       steps {
         sh '''
           #!/bin/bash
-          set -euo pipefail
+          set -eu
 
           echo "Workspace: $PWD"
 
@@ -66,7 +66,7 @@ pipeline {
       steps {
         sh '''
           #!/bin/bash
-          set -euo pipefail
+          set -eu
           # Use the venv python binary directly to run pytest
           ${PY_BIN} -m pytest -q || { echo "pytest failed"; exit 1; }
         '''
